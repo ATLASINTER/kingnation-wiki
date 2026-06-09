@@ -1,0 +1,1115 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>KingNation — Wiki & Règlement Officiel</title>
+  <link rel="icon" type="image/webp" href="assets/logo.webp">
+  <link rel="shortcut icon" type="image/webp" href="assets/logo.webp">
+
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Wiki officiel de KingNation — Commandes, règlement et informations sur le serveur Minecraft géopolitique.">
+  <meta name="keywords" content="KingNation, Wiki, Règlement, Commandes, Serveur Minecraft, Géopolitique">
+  <meta name="author" content="KingNation — ATLAS INTERACTIVE™">
+
+  <!-- Open Graph -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="KingNation — Wiki & Règlement Officiel">
+  <meta property="og:description" content="Retrouvez toutes les commandes, règles et informations officielles du serveur KingNation.">
+  <meta property="og:image" content="assets/logo.webp">
+  <meta name="theme-color" content="#ff1f3d">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Pixelify+Sans:wght@700&display=swap" rel="stylesheet">
+
+  <style>
+    /* =============================================
+       KINGNATION WIKI — Premium Glass Dark Theme
+       ============================================= */
+    :root {
+      --bg:              #050507;
+      --bg-2:            #080810;
+      --red:             #ff1f3d;
+      --red-2:           #ff4a63;
+      --red-soft:        rgba(255, 31, 61, 0.12);
+      --red-glow:        rgba(255, 31, 61, 0.3);
+      --gold:            #ffd200;
+      --gold-soft:       rgba(255, 210, 0, 0.1);
+      --blue:            #5865f2;
+      --blue-soft:       rgba(88, 101, 242, 0.1);
+      --green:           #2ed573;
+      --white:           #ffffff;
+      --text-dim:        rgba(255,255,255,0.72);
+      --text-mute:       rgba(255,255,255,0.42);
+      --glass-bg:        rgba(10, 10, 18, 0.5);
+      --glass-border:    rgba(255,255,255,0.07);
+      --glass-border-hi: rgba(255,255,255,0.18);
+      --glass-blur:      blur(28px) saturate(180%);
+      --radius:          24px;
+      --radius-sm:       16px;
+      --radius-xs:       10px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    ::selection { background: var(--red); color: white; }
+
+    ::-webkit-scrollbar { width: 8px; }
+    ::-webkit-scrollbar-track { background: var(--bg); }
+    ::-webkit-scrollbar-thumb { background: rgba(255,31,61,0.3); border-radius: 4px; }
+    ::-webkit-scrollbar-thumb:hover { background: var(--red); }
+
+    html, body {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--white);
+      font-family: 'Outfit', sans-serif;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+
+    /* ── AMBIENT BACKGROUND ── */
+    .bg-glow-1 {
+      position: fixed; top: -5%; left: 10%;
+      width: 700px; height: 700px;
+      background: radial-gradient(circle, var(--red-glow) 0%, transparent 65%);
+      opacity: 0.3; z-index: 0; pointer-events: none;
+      animation: glow1 24s ease-in-out infinite;
+    }
+    .bg-glow-2 {
+      position: fixed; bottom: -10%; right: 5%;
+      width: 500px; height: 500px;
+      background: radial-gradient(circle, rgba(88,101,242,0.15) 0%, transparent 65%);
+      opacity: 0.4; z-index: 0; pointer-events: none;
+      animation: glow2 30s ease-in-out infinite;
+    }
+    .bg-glow-3 {
+      position: fixed; top: 40%; left: 50%;
+      width: 400px; height: 400px;
+      transform: translate(-50%, -50%);
+      background: radial-gradient(circle, rgba(255,210,0,0.04) 0%, transparent 70%);
+      z-index: 0; pointer-events: none;
+      animation: glow3 18s ease-in-out infinite;
+    }
+    .bg-grid {
+      position: fixed; inset: 0;
+      background-image: radial-gradient(rgba(255,255,255,0.01) 1px, transparent 1px);
+      background-size: 28px 28px;
+      z-index: 0; pointer-events: none;
+      animation: gridDrift 20s linear infinite;
+    }
+    @keyframes glow1 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(80px,50px) scale(1.12)} }
+    @keyframes glow2 { 0%,100%{transform:translate(0,0) scale(1)} 50%{transform:translate(-60px,-40px) scale(0.9)} }
+    @keyframes glow3 { 0%,100%{opacity:0.5} 50%{opacity:0.9} }
+    @keyframes gridDrift { 0%{background-position:0 0} 100%{background-position:28px 28px} }
+
+    /* ── HEADER ── */
+    header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(5,5,7,0.85);
+      backdrop-filter: var(--glass-blur);
+      -webkit-backdrop-filter: var(--glass-blur);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .header-inner {
+      max-width: 1280px; margin: 0 auto;
+      padding: 16px 28px;
+      display: flex; align-items: center; justify-content: space-between; gap: 20px;
+    }
+    .logo-link {
+      display: flex; align-items: center; gap: 12px;
+      text-decoration: none; color: inherit;
+    }
+    .logo-link img { width: 36px; height: 36px; object-fit: contain;
+      filter: drop-shadow(0 0 10px var(--red-glow));
+      transition: transform 0.3s ease;
+    }
+    .logo-link:hover img { transform: rotate(8deg) scale(1.08); }
+    .logo-text {
+      font-family: 'Pixelify Sans', sans-serif;
+      font-size: 20px; letter-spacing: 0.12em; line-height: 1;
+    }
+    .logo-text .accent { color: var(--red); text-shadow: 0 0 10px var(--red-glow); }
+    .logo-sub {
+      font-size: 11px; font-weight: 500; color: var(--text-mute);
+      letter-spacing: 0.18em; text-transform: uppercase;
+      margin-left: 4px;
+    }
+
+    .header-right { display: flex; align-items: center; gap: 12px; }
+    .btn-discord-header {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 18px; border-radius: var(--radius-sm);
+      background: rgba(88,101,242,0.1); border: 1px solid rgba(88,101,242,0.25);
+      color: white; text-decoration: none; font-size: 13px; font-weight: 700;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .btn-discord-header:hover {
+      background: rgba(88,101,242,0.2); border-color: rgba(88,101,242,0.5);
+      transform: translateY(-1px);
+    }
+    .btn-launcher-header {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 9px 18px; border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--red), #b8001a);
+      border: 1px solid rgba(255,255,255,0.1);
+      color: white; text-decoration: none; font-size: 13px; font-weight: 700;
+      box-shadow: 0 4px 15px rgba(255,31,61,0.2);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-launcher-header:hover {
+      transform: translateY(-1px);
+      box-shadow: 0 8px 20px rgba(255,31,61,0.35);
+    }
+
+    /* ── HERO ── */
+    .hero {
+      position: relative; z-index: 2;
+      max-width: 1280px; margin: 0 auto;
+      padding: 72px 28px 40px;
+      text-align: center;
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 8px;
+      padding: 6px 16px; border-radius: 50px;
+      background: var(--red-soft); border: 1px solid rgba(255,31,61,0.2);
+      font-size: 12px; font-weight: 700; letter-spacing: 0.1em;
+      color: var(--red-2); text-transform: uppercase;
+      margin-bottom: 24px;
+      animation: fadeInDown 0.6s ease both;
+    }
+    .hero-title {
+      font-family: 'Pixelify Sans', sans-serif;
+      font-size: clamp(36px, 6vw, 68px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      animation: fadeInUp 0.7s ease 0.1s both;
+    }
+    .hero-title .line-2 { color: var(--red); text-shadow: 0 0 30px var(--red-glow); }
+    .hero-subtitle {
+      font-size: clamp(15px, 2vw, 18px); color: var(--text-dim);
+      max-width: 620px; margin: 0 auto 48px; line-height: 1.6;
+      animation: fadeInUp 0.7s ease 0.2s both;
+    }
+
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+    @keyframes fadeInDown { from{opacity:0;transform:translateY(-14px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ── TAB NAVIGATION ── */
+    .tab-nav {
+      display: flex; justify-content: center; gap: 8px;
+      margin-bottom: 48px; flex-wrap: wrap;
+      animation: fadeInUp 0.7s ease 0.3s both;
+    }
+    .tab-btn {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 12px 24px; border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.03); border: 1px solid var(--glass-border);
+      color: var(--text-dim); font-size: 14px; font-weight: 700;
+      cursor: pointer; transition: all 0.25s cubic-bezier(0.25,0.8,0.25,1);
+      font-family: 'Outfit', sans-serif; letter-spacing: 0.04em;
+      position: relative; overflow: hidden;
+    }
+    .tab-btn::before {
+      content: ''; position: absolute; inset: 0;
+      background: linear-gradient(135deg, var(--tab-color, var(--red-soft)) 0%, transparent 100%);
+      opacity: 0; transition: opacity 0.25s;
+    }
+    .tab-btn:hover::before, .tab-btn.active::before { opacity: 1; }
+    .tab-btn:hover { border-color: var(--tab-border, rgba(255,31,61,0.3)); color: white; transform: translateY(-2px); }
+    .tab-btn.active {
+      color: white; border-color: var(--tab-border, rgba(255,31,61,0.5));
+      box-shadow: 0 8px 24px var(--tab-shadow, rgba(255,31,61,0.15));
+    }
+    .tab-icon { font-size: 18px; position: relative; z-index: 1; }
+    .tab-label { position: relative; z-index: 1; }
+
+    /* Tab color theming */
+    .tab-btn[data-tab="commandes"] { --tab-color: var(--red-soft); --tab-border: rgba(255,31,61,0.4); --tab-shadow: rgba(255,31,61,0.15); }
+    .tab-btn[data-tab="reglement"] { --tab-color: var(--gold-soft); --tab-border: rgba(255,210,0,0.3); --tab-shadow: rgba(255,210,0,0.1); }
+    .tab-btn[data-tab="information"] { --tab-color: var(--blue-soft); --tab-border: rgba(88,101,242,0.35); --tab-shadow: rgba(88,101,242,0.12); }
+
+    /* ── MAIN CONTENT ── */
+    .main {
+      position: relative; z-index: 2;
+      max-width: 1280px; margin: 0 auto;
+      padding: 0 28px 100px;
+    }
+
+    .tab-content { display: none; animation: fadeInUp 0.4s ease both; }
+    .tab-content.active { display: block; }
+
+    /* ── SECTION HEADERS ── */
+    .section-header {
+      display: flex; align-items: center; gap: 16px;
+      margin-bottom: 28px; padding-bottom: 20px;
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .section-icon-wrapper {
+      width: 52px; height: 52px; border-radius: 14px;
+      display: flex; align-items: center; justify-content: center;
+      font-size: 24px; flex-shrink: 0;
+    }
+    .section-icon-wrapper.red { background: var(--red-soft); border: 1px solid rgba(255,31,61,0.2); }
+    .section-icon-wrapper.gold { background: var(--gold-soft); border: 1px solid rgba(255,210,0,0.2); }
+    .section-icon-wrapper.blue { background: var(--blue-soft); border: 1px solid rgba(88,101,242,0.2); }
+    .section-title {
+      font-family: 'Pixelify Sans', sans-serif;
+      font-size: clamp(22px, 3vw, 30px);
+    }
+    .section-desc { font-size: 14px; color: var(--text-mute); margin-top: 4px; }
+
+    /* ── COMMAND GROUPS ── */
+    .cmd-groups { display: flex; flex-direction: column; gap: 32px; }
+
+    .cmd-group {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border); border-radius: var(--radius);
+      overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .cmd-group:hover { border-color: rgba(255,31,61,0.2); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+
+    .cmd-group-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 20px 28px;
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .cmd-group-icon { font-size: 22px; }
+    .cmd-group-title { font-size: 17px; font-weight: 800; letter-spacing: 0.02em; }
+    .cmd-group-badge {
+      margin-left: auto; padding: 3px 10px; border-radius: 50px;
+      font-size: 11px; font-weight: 700; letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+    .cmd-group-badge.all { background: rgba(46,213,115,0.12); color: var(--green); border: 1px solid rgba(46,213,115,0.25); }
+    .cmd-group-badge.president { background: var(--gold-soft); color: var(--gold); border: 1px solid rgba(255,210,0,0.3); }
+    .cmd-group-badge.economy { background: var(--red-soft); color: var(--red-2); border: 1px solid rgba(255,31,61,0.25); }
+    .cmd-group-badge.info { background: var(--blue-soft); color: #818cf8; border: 1px solid rgba(88,101,242,0.25); }
+
+    .cmd-list { padding: 8px 0; }
+
+    .cmd-item {
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 0 20px; padding: 18px 28px;
+      border-bottom: 1px solid rgba(255,255,255,0.03);
+      transition: background 0.2s;
+      align-items: start;
+    }
+    .cmd-item:last-child { border-bottom: none; }
+    .cmd-item:hover { background: rgba(255,255,255,0.025); }
+
+    .cmd-name {
+      font-family: 'Courier New', monospace;
+      font-size: 14px; font-weight: 700;
+      color: var(--red-2);
+      background: rgba(255,31,61,0.08);
+      border: 1px solid rgba(255,31,61,0.18);
+      padding: 4px 10px; border-radius: 6px;
+      white-space: nowrap; align-self: start;
+      letter-spacing: 0.02em;
+      transition: background 0.2s, border-color 0.2s;
+    }
+    .cmd-item:hover .cmd-name { background: rgba(255,31,61,0.14); border-color: rgba(255,31,61,0.35); }
+    .cmd-desc { font-size: 14px; color: var(--text-dim); line-height: 1.55; padding-top: 3px; }
+
+    /* ── RULE SECTIONS ── */
+    .rules-layout { display: flex; flex-direction: column; gap: 24px; }
+
+    .rule-block {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border); border-radius: var(--radius);
+      overflow: hidden; transition: border-color 0.3s, box-shadow 0.3s;
+    }
+    .rule-block:hover { border-color: rgba(255,210,0,0.15); box-shadow: 0 12px 40px rgba(0,0,0,0.3); }
+
+    .rule-block-header {
+      display: flex; align-items: center; gap: 14px;
+      padding: 20px 28px;
+      background: rgba(255,255,255,0.02);
+      border-bottom: 1px solid var(--glass-border);
+    }
+    .rule-block-title { font-size: 16px; font-weight: 800; }
+
+    .rule-block-body { padding: 24px 28px; }
+
+    .rule-list { list-style: none; display: flex; flex-direction: column; gap: 12px; }
+    .rule-list li {
+      display: flex; align-items: flex-start; gap: 12px;
+      font-size: 14px; color: var(--text-dim); line-height: 1.55;
+    }
+    .rule-bullet {
+      width: 6px; height: 6px; border-radius: 50%;
+      background: var(--gold); flex-shrink: 0; margin-top: 7px;
+      box-shadow: 0 0 6px rgba(255,210,0,0.5);
+    }
+    .rule-bullet.red { background: var(--red); box-shadow: 0 0 6px var(--red-glow); }
+    .rule-bullet.blue { background: var(--blue); box-shadow: 0 0 6px rgba(88,101,242,0.5); }
+
+    .rule-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 16px; }
+
+    .rule-mini-card {
+      background: rgba(255,255,255,0.025); border: 1px solid var(--glass-border);
+      border-radius: var(--radius-sm); padding: 20px;
+      transition: border-color 0.25s, background 0.25s, transform 0.25s;
+    }
+    .rule-mini-card:hover {
+      border-color: rgba(255,210,0,0.2); background: rgba(255,210,0,0.03);
+      transform: translateY(-3px);
+    }
+    .rule-mini-title { font-size: 15px; font-weight: 700; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+    .rule-mini-list { list-style: none; display: flex; flex-direction: column; gap: 8px; }
+    .rule-mini-list li { font-size: 13px; color: var(--text-dim); display: flex; align-items: flex-start; gap: 8px; line-height: 1.45; }
+
+    .war-timing-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 16px; margin-top: 4px; }
+    .war-card {
+      padding: 20px; border-radius: var(--radius-sm);
+      border: 1px solid; display: flex; flex-direction: column; gap: 10px;
+    }
+    .war-card.bot { background: rgba(46,213,115,0.05); border-color: rgba(46,213,115,0.2); }
+    .war-card.player { background: rgba(255,31,61,0.05); border-color: rgba(255,31,61,0.2); }
+    .war-card-title { font-size: 14px; font-weight: 800; display: flex; align-items: center; gap: 8px; }
+    .war-card.bot .war-card-title { color: var(--green); }
+    .war-card.player .war-card-title { color: var(--red-2); }
+    .war-card-timer { font-family: 'Pixelify Sans', sans-serif; font-size: 32px; font-weight: 700; }
+    .war-card.bot .war-card-timer { color: var(--green); text-shadow: 0 0 12px rgba(46,213,115,0.4); }
+    .war-card.player .war-card-timer { color: var(--red); text-shadow: 0 0 12px var(--red-glow); }
+    .war-card-desc { font-size: 13px; color: var(--text-dim); line-height: 1.45; }
+
+    .warning-banner {
+      display: flex; align-items: flex-start; gap: 14px;
+      padding: 18px 22px; border-radius: var(--radius-sm);
+      background: rgba(255,210,0,0.04); border: 1px solid rgba(255,210,0,0.18);
+      margin-bottom: 16px;
+    }
+    .warning-banner-icon { font-size: 20px; flex-shrink: 0; margin-top: 1px; }
+    .warning-banner-text { font-size: 13.5px; color: var(--text-dim); line-height: 1.55; }
+    .warning-banner-text strong { color: var(--gold); }
+
+    /* ── INFORMATION TAB ── */
+    .info-hero {
+      display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-bottom: 24px;
+    }
+    @media (max-width: 768px) { .info-hero { grid-template-columns: 1fr; } }
+
+    .info-card {
+      background: var(--glass-bg);
+      backdrop-filter: var(--glass-blur); -webkit-backdrop-filter: var(--glass-blur);
+      border: 1px solid var(--glass-border); border-radius: var(--radius);
+      padding: 28px; transition: border-color 0.3s, box-shadow 0.3s, transform 0.25s;
+    }
+    .info-card:hover {
+      border-color: rgba(88,101,242,0.25); box-shadow: 0 16px 48px rgba(0,0,0,0.35);
+      transform: translateY(-3px);
+    }
+    .info-card.featured {
+      grid-column: span 2; background: rgba(88,101,242,0.04);
+      border-color: rgba(88,101,242,0.18);
+    }
+    @media (max-width: 768px) { .info-card.featured { grid-column: span 1; } }
+
+    .info-card-icon { font-size: 32px; margin-bottom: 16px; }
+    .info-card-title { font-family: 'Pixelify Sans', sans-serif; font-size: 20px; margin-bottom: 10px; }
+    .info-card-desc { font-size: 14px; color: var(--text-dim); line-height: 1.6; }
+
+    .feature-pills { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 16px; }
+    .pill {
+      padding: 5px 12px; border-radius: 50px; font-size: 12px; font-weight: 700;
+      background: rgba(88,101,242,0.1); border: 1px solid rgba(88,101,242,0.2);
+      color: #818cf8; letter-spacing: 0.04em;
+    }
+    .pill.red { background: var(--red-soft); border-color: rgba(255,31,61,0.2); color: var(--red-2); }
+    .pill.gold { background: var(--gold-soft); border-color: rgba(255,210,0,0.2); color: var(--gold); }
+    .pill.green { background: rgba(46,213,115,0.08); border-color: rgba(46,213,115,0.2); color: var(--green); }
+
+    .info-notice {
+      display: flex; align-items: center; gap: 16px;
+      padding: 20px 24px; border-radius: var(--radius-sm);
+      background: rgba(46,213,115,0.04); border: 1px solid rgba(46,213,115,0.2);
+      margin-top: 24px;
+    }
+    .info-notice-dot { width: 10px; height: 10px; border-radius: 50%; background: var(--green);
+      box-shadow: 0 0 10px rgba(46,213,115,0.6); flex-shrink: 0; animation: pulse 2s infinite alternate; }
+    @keyframes pulse { 0%{transform:scale(1);opacity:0.8} 100%{transform:scale(1.2);opacity:1} }
+    .info-notice-text { font-size: 14px; color: var(--text-dim); line-height: 1.5; }
+    .info-notice-text strong { color: var(--green); }
+
+    .whitelist-cta {
+      margin-top: 32px;
+      background: linear-gradient(135deg, rgba(255,31,61,0.08), rgba(88,101,242,0.08));
+      border: 1px solid rgba(255,255,255,0.08); border-radius: var(--radius);
+      padding: 40px; text-align: center; position: relative; overflow: hidden;
+    }
+    .whitelist-cta::before {
+      content: ''; position: absolute; inset: 0;
+      background: radial-gradient(circle at 50% 50%, rgba(255,31,61,0.06) 0%, transparent 60%);
+      pointer-events: none;
+    }
+    .whitelist-cta h3 { font-family: 'Pixelify Sans', sans-serif; font-size: 26px; margin-bottom: 12px; }
+    .whitelist-cta p { font-size: 15px; color: var(--text-dim); margin-bottom: 28px; line-height: 1.5; max-width: 520px; margin-left: auto; margin-right: auto; }
+    .cta-buttons { display: flex; justify-content: center; gap: 14px; flex-wrap: wrap; }
+    .btn-cta-primary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px; border-radius: var(--radius-sm);
+      background: linear-gradient(135deg, var(--red), #b8001a);
+      color: white; text-decoration: none; font-size: 15px; font-weight: 700;
+      border: 1px solid rgba(255,255,255,0.1);
+      box-shadow: 0 8px 24px rgba(255,31,61,0.25);
+      transition: transform 0.2s, box-shadow 0.2s;
+    }
+    .btn-cta-primary:hover { transform: translateY(-2px); box-shadow: 0 12px 30px rgba(255,31,61,0.4); }
+    .btn-cta-secondary {
+      display: inline-flex; align-items: center; gap: 10px;
+      padding: 14px 32px; border-radius: var(--radius-sm);
+      background: rgba(88,101,242,0.1); border: 1px solid rgba(88,101,242,0.25);
+      color: white; text-decoration: none; font-size: 15px; font-weight: 700;
+      transition: background 0.2s, border-color 0.2s, transform 0.2s;
+    }
+    .btn-cta-secondary:hover { background: rgba(88,101,242,0.2); border-color: rgba(88,101,242,0.5); transform: translateY(-2px); }
+
+    /* ── FOOTER ── */
+    footer {
+      position: relative; z-index: 2;
+      border-top: 1px solid var(--glass-border);
+      padding: 40px 28px; text-align: center;
+      font-size: 13px; color: var(--text-mute);
+    }
+    footer p { margin-bottom: 10px; }
+    .footer-links { display: flex; justify-content: center; gap: 20px; flex-wrap: wrap; }
+    .footer-links a { color: var(--text-dim); text-decoration: none; transition: color 0.15s; }
+    .footer-links a:hover { color: var(--red-2); }
+    .atlas-brand { font-weight: 700; color: var(--text-dim); letter-spacing: 0.06em; }
+
+    /* ── RESPONSIVE ── */
+    @media (max-width: 640px) {
+      .header-inner { padding: 14px 18px; }
+      .logo-sub { display: none; }
+      .btn-launcher-header { display: none; }
+      .hero { padding: 48px 18px 32px; }
+      .main { padding: 0 18px 80px; }
+      .cmd-item { grid-template-columns: 1fr; gap: 8px; }
+      .cmd-name { width: fit-content; }
+    }
+
+    /* ── STICKY CHANNEL BAR (Discord feel) ── */
+    .channel-bar {
+      display: flex; align-items: center; gap: 8px;
+      padding: 10px 18px; border-radius: var(--radius-sm);
+      background: rgba(255,255,255,0.02); border: 1px solid var(--glass-border);
+      margin-bottom: 28px; font-size: 13px; color: var(--text-mute);
+    }
+    .channel-bar .channel-icon { opacity: 0.6; }
+    .channel-bar .channel-name { font-weight: 700; color: var(--text-dim); }
+    .channel-bar .channel-sep { margin: 0 4px; }
+    .channel-bar .channel-topic { color: var(--text-mute); overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+
+  </style>
+</head>
+<body>
+
+  <!-- Ambient Background -->
+  <div class="bg-grid"></div>
+  <div class="bg-glow-1"></div>
+  <div class="bg-glow-2"></div>
+  <div class="bg-glow-3"></div>
+
+  <!-- HEADER -->
+  <header>
+    <div class="header-inner">
+      <a href="index.html" class="logo-link">
+        <img src="assets/logo.webp" alt="KingNation Logo">
+        <div>
+          <div class="logo-text">KING<span class="accent">NATION</span></div>
+        </div>
+        <span class="logo-sub">Wiki Officiel</span>
+      </a>
+      <div class="header-right">
+        <a href="https://discord.gg/aPf2v9MduU" target="_blank" rel="noopener noreferrer" class="btn-discord-header">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.36 2.8a13.6 13.6 0 0 0-.64 1.32 18.4 18.4 0 0 0-5.44 0 13.6 13.6 0 0 0-.64-1.32 19.7 19.7 0 0 0-4.96 1.57C.54 9.02-.32 13.56.1 18.04a19.9 19.9 0 0 0 6.08 3.08c.48-.66.92-1.36 1.3-2.1-.72-.27-1.4-.6-2.04-.98.17-.12.34-.25.5-.38a14.2 14.2 0 0 0 12.12 0c.16.13.33.26.5.38-.64.38-1.32.71-2.04.98.38.74.82 1.44 1.3 2.1a19.9 19.9 0 0 0 6.08-3.08c.5-5.2-.86-9.7-3.58-13.67ZM8.02 15.3c-1.18 0-2.14-1.08-2.14-2.4s.94-2.4 2.14-2.4c1.2 0 2.16 1.08 2.14 2.4 0 1.32-.94 2.4-2.14 2.4Zm7.96 0c-1.18 0-2.14-1.08-2.14-2.4s.94-2.4 2.14-2.4c1.2 0 2.16 1.08 2.14 2.4 0 1.32-.94 2.4-2.14 2.4Z"/></svg>
+          Discord
+        </a>
+        <a href="https://atlasinter.github.io" target="_blank" rel="noopener noreferrer" class="btn-launcher-header">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+          Télécharger
+        </a>
+      </div>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div class="hero-badge">
+      <span>👑</span>
+      <span>Documentation Officielle</span>
+    </div>
+    <h1 class="hero-title">
+      Wiki KingNation<br>
+      <span class="line-2">Guides & Règlements</span>
+    </h1>
+    <p class="hero-subtitle">
+      Retrouvez toutes les commandes, règles du serveur et informations officielles sur le projet KingNation — le serveur Minecraft géopolitique développé par ATLAS INTERACTIVE™.
+    </p>
+
+    <!-- TAB NAVIGATION -->
+    <nav class="tab-nav" role="tablist">
+      <button class="tab-btn active" data-tab="commandes" role="tab" aria-selected="true">
+        <span class="tab-icon">#</span>
+        <span class="tab-label">Commandes In-Game</span>
+      </button>
+      <button class="tab-btn" data-tab="reglement" role="tab" aria-selected="false">
+        <span class="tab-icon">📜</span>
+        <span class="tab-label">Règlement</span>
+      </button>
+      <button class="tab-btn" data-tab="information" role="tab" aria-selected="false">
+        <span class="tab-icon">🌐</span>
+        <span class="tab-label">Informations</span>
+      </button>
+    </nav>
+  </section>
+
+  <!-- MAIN CONTENT -->
+  <main class="main">
+
+    <!-- ═══════════════════════════════════════ -->
+    <!--  TAB 1 — COMMANDES IN-GAME             -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="tab-content active" id="tab-commandes">
+      <div class="channel-bar">
+        <span class="channel-icon">#</span>
+        <span class="channel-name">commande-in-game</span>
+        <span class="channel-sep">—</span>
+        <span class="channel-topic">Liste des commandes disponibles en jeu sur KingNation</span>
+      </div>
+
+      <div class="section-header">
+        <div class="section-icon-wrapper red">👑</div>
+        <div>
+          <h2 class="section-title">Commandes In-Game</h2>
+          <p class="section-desc">Toutes les commandes disponibles sur le serveur KingNation, classées par rôle</p>
+        </div>
+      </div>
+
+      <div class="cmd-groups">
+
+        <!-- GROUP 1 : Commandes Joueurs -->
+        <div class="cmd-group">
+          <div class="cmd-group-header">
+            <span class="cmd-group-icon">👑</span>
+            <span class="cmd-group-title">Commandes pour tous les Joueurs</span>
+            <span class="cmd-group-badge all">Tous</span>
+          </div>
+          <div class="cmd-list">
+            <div class="cmd-item">
+              <code class="cmd-name">/kingkit</code>
+              <p class="cmd-desc">Récupère votre kit de départ <strong>(une seule fois par joueur)</strong>. Il vous donne les objets configurés par le staff, de l'argent de départ, ainsi que des Poids Politiques pour votre pays si vous en avez un.</p>
+            </div>
+            <div class="cmd-item">
+              <code class="cmd-name">/paystop</code>
+              <p class="cmd-desc">Ouvre le <strong>Classement des Pays Riches</strong> pour voir quels sont les pays les plus fortunés du serveur.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUP 2 : Commandes Présidents -->
+        <div class="cmd-group">
+          <div class="cmd-group-header">
+            <span class="cmd-group-icon">🗳️</span>
+            <span class="cmd-group-title">Commandes pour les Présidents</span>
+            <span class="cmd-group-badge president">Président</span>
+          </div>
+          <div class="cmd-list">
+            <div class="cmd-item">
+              <code class="cmd-name">/controlpays</code>
+              <p class="cmd-desc">Accessible uniquement par le <strong>Président</strong> de chaque pays. Ouvre le panneau de contrôle politique et diplomatique de sa nation — permet de changer l'idéologie, la religion, le niveau Defcon, de décréter la loi martiale, de fermer les frontières, d'activer le commerce, le recrutement, etc.</p>
+            </div>
+            <div class="cmd-item">
+              <code class="cmd-name">/capitale</code>
+              <p class="cmd-desc">Permet de se téléporter à la <strong>capitale du pays</strong>.</p>
+            </div>
+            <div class="cmd-item">
+              <code class="cmd-name">/permpays</code>
+              <p class="cmd-desc">Ouvre l'interface de gestion des permissions de votre pays. Affiche la liste des citoyens (membres en ligne/hors-ligne, leur solde bancaire), le compte en banque national, son Poids Politique, ainsi que les joueurs étrangers ayant des droits. <em>Note : Tout citoyen peut le consulter, mais seul le président peut modifier les droits.</em></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUP 3 : Économie & Commerce -->
+        <div class="cmd-group">
+          <div class="cmd-group-header">
+            <span class="cmd-group-icon">💰</span>
+            <span class="cmd-group-title">Économie & Commerce</span>
+            <span class="cmd-group-badge economy">Économie</span>
+          </div>
+          <div class="cmd-list">
+            <div class="cmd-item">
+              <code class="cmd-name">/shop</code>
+              <p class="cmd-desc">Ouvre le <strong>menu de la boutique</strong> du serveur pour acheter ou vendre vos ressources.</p>
+            </div>
+            <div class="cmd-item">
+              <code class="cmd-name">/banque</code>
+              <p class="cmd-desc">Ouvre votre <strong>compte en banque personnel</strong> pour stocker votre argent en toute sécurité.</p>
+            </div>
+            <div class="cmd-item">
+              <code class="cmd-name">/paysbank</code>
+              <p class="cmd-desc">Ouvre la <strong>banque nationale de votre pays</strong>. Idéal pour cotiser en groupe et financer des projets nationaux.</p>
+            </div>
+            <div class="cmd-item">
+              <code class="cmd-name">/moneytop</code>
+              <p class="cmd-desc">Ouvre le <strong>Classement des Riches</strong> pour voir quels sont les joueurs les plus fortunés du serveur.</p>
+            </div>
+          </div>
+        </div>
+
+        <!-- GROUP 4 : Informations Pays -->
+        <div class="cmd-group">
+          <div class="cmd-group-header">
+            <span class="cmd-group-icon">🌍</span>
+            <span class="cmd-group-title">Informations sur les Pays</span>
+            <span class="cmd-group-badge info">Info</span>
+          </div>
+          <div class="cmd-list">
+            <div class="cmd-item">
+              <code class="cmd-name">/infopays</code>
+              <p class="cmd-desc">Ouvre l'interface listant <strong>tous les pays du serveur</strong>. Vous pouvez y voir l'idéologie, la religion d'état, le président et le statut de recrutement de chaque nation.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!--  TAB 2 — RÈGLEMENT                     -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="tab-content" id="tab-reglement">
+      <div class="channel-bar">
+        <span class="channel-icon">📜</span>
+        <span class="channel-name">reglement</span>
+        <span class="channel-sep">—</span>
+        <span class="channel-topic">Règlement officiel Discord & Serveur Minecraft KingNation</span>
+      </div>
+
+      <div class="section-header">
+        <div class="section-icon-wrapper gold">📜</div>
+        <div>
+          <h2 class="section-title">Règlement Officiel</h2>
+          <p class="section-desc">Règlement Discord et règlement du serveur KingNation — à lire et respecter obligatoirement</p>
+        </div>
+      </div>
+
+      <div class="rules-layout">
+
+        <!-- RÈGLEMENT DISCORD -->
+        <div class="rule-block">
+          <div class="rule-block-header">
+            <span style="font-size:22px">🟣</span>
+            <span class="rule-block-title">Règlement Officiel — Discord KingNation</span>
+          </div>
+          <div class="rule-block-body">
+            <p style="font-size:14px;color:var(--text-dim);margin-bottom:24px;line-height:1.6;">Bienvenue sur le serveur Discord officiel de KING NATION. Ce serveur est destiné à la communauté du projet, aux annonces, aux échanges et au suivi du développement.</p>
+
+            <div class="rule-grid">
+              <div class="rule-mini-card">
+                <div class="rule-mini-title">🤝 Respect</div>
+                <ul class="rule-mini-list">
+                  <li><span class="rule-bullet"></span>Respect obligatoire envers tous les membres et le staff.</li>
+                  <li><span class="rule-bullet"></span>Les insultes, provocations, discriminations et harcèlement sont interdits.</li>
+                  <li><span class="rule-bullet"></span>Les conflits inutiles ne seront pas tolérés.</li>
+                </ul>
+              </div>
+              <div class="rule-mini-card">
+                <div class="rule-mini-title">🎭 Comportement</div>
+                <ul class="rule-mini-list">
+                  <li><span class="rule-bullet"></span>Le spam, flood et troll abusif sont interdits.</li>
+                  <li><span class="rule-bullet"></span>Les contenus NSFW, choquants ou illégaux sont interdits.</li>
+                  <li><span class="rule-bullet"></span>Les pseudos, avatars ou statuts inappropriés peuvent entraîner une sanction.</li>
+                </ul>
+              </div>
+              <div class="rule-mini-card">
+                <div class="rule-mini-title">💬 Utilisation des Salons</div>
+                <ul class="rule-mini-list">
+                  <li><span class="rule-bullet"></span>Utilisez les salons correctement selon leur thème.</li>
+                  <li><span class="rule-bullet"></span>Évitez le hors-sujet excessif.</li>
+                  <li><span class="rule-bullet"></span>Respectez les indications données par le staff.</li>
+                </ul>
+              </div>
+              <div class="rule-mini-card">
+                <div class="rule-mini-title">📢 Publicité</div>
+                <ul class="rule-mini-list">
+                  <li><span class="rule-bullet red"></span>Toute publicité non autorisée est interdite.</li>
+                  <li><span class="rule-bullet red"></span>Le partage de serveurs ou projets personnels doit être validé par un administrateur.</li>
+                </ul>
+              </div>
+            </div>
+
+            <div class="rule-mini-card" style="margin-top:16px;background:rgba(255,31,61,0.04);border-color:rgba(255,31,61,0.18);">
+              <div class="rule-mini-title">⚖️ Sanctions</div>
+              <p style="font-size:13.5px;color:var(--text-dim);line-height:1.55;">Le staff se réserve le droit d'appliquer des sanctions selon la gravité des faits : <span style="color:var(--red-2);font-weight:700;">Avertissement, mute, kick ou bannissement définitif.</span></p>
+            </div>
+          </div>
+        </div>
+
+        <!-- RÈGLEMENT SERVEUR MINECRAFT -->
+        <div class="rule-block">
+          <div class="rule-block-header">
+            <span style="font-size:22px">⚔️</span>
+            <span class="rule-block-title">Règlement Officiel — Serveur Minecraft KingNation</span>
+          </div>
+          <div class="rule-block-body">
+            <p style="font-size:14px;color:var(--text-dim);margin-bottom:24px;line-height:1.6;">KING NATION est un serveur géopolitique basé sur la stratégie, la diplomatie, l'économie et les conflits entre nations. Chaque joueur doit respecter les règles suivantes afin de garantir une expérience sérieuse et équilibrée.</p>
+
+            <!-- JOURNAL OBLIGATOIRE -->
+            <div class="rule-mini-card" style="background:rgba(255,31,61,0.05);border-color:rgba(255,31,61,0.2);margin-bottom:16px;">
+              <div class="rule-mini-title" style="color:var(--red-2);">🔴 Journal Obligatoire</div>
+              <p style="font-size:13.5px;color:var(--text-dim);line-height:1.55;margin-bottom:12px;">Toutes les actions importantes doivent obligatoirement être écrites dans le salon journal. Exemples :</p>
+              <ul class="rule-mini-list">
+                <li><span class="rule-bullet red"></span>Déclarations de guerre & Alliances</li>
+                <li><span class="rule-bullet red"></span>Traités & Crises diplomatiques</li>
+                <li><span class="rule-bullet red"></span>Changements politiques & Évènements importants</li>
+                <li><span class="rule-bullet red"></span>Décisions économiques ou militaires</li>
+              </ul>
+            </div>
+
+            <!-- ACTIVITÉ PRÉSIDENTS -->
+            <div class="rule-mini-card" style="margin-bottom:16px;">
+              <div class="rule-mini-title">👑 Activité des Présidents</div>
+              <p style="font-size:13.5px;color:var(--text-dim);line-height:1.55;margin-bottom:10px;">Chaque président de pays est obligé de publier <strong style="color:white;">au minimum 1 journal par semaine</strong>. Le journal peut parler :</p>
+              <ul class="rule-mini-list">
+                <li><span class="rule-bullet"></span>De la situation du pays ou d'un évènement</li>
+                <li><span class="rule-bullet"></span>D'une annonce ou d'un projet national</li>
+                <li><span class="rule-bullet"></span>D'informations politiques, économiques ou militaires</li>
+              </ul>
+              <p style="font-size:12.5px;color:var(--red-2);margin-top:10px;font-weight:600;">⚠️ Un manque d'activité peut entraîner des sanctions administratives.</p>
+            </div>
+
+            <!-- SYSTÈME DE GUERRE -->
+            <div class="rule-mini-card" style="margin-bottom:16px;">
+              <div class="rule-mini-title">⚔️ Système de Guerre</div>
+              <p style="font-size:13.5px;color:var(--text-dim);line-height:1.55;margin-bottom:16px;">Toute guerre doit être annoncée officiellement dans le salon journal. Une fois le message de déclaration publié, le timer commence immédiatement.</p>
+              <div class="war-timing-cards">
+                <div class="war-card bot">
+                  <div class="war-card-title">🤖 Guerre contre un BOT</div>
+                  <div class="war-card-timer">15 min</div>
+                  <p class="war-card-desc">Délai obligatoire avant le début des combats contre un pays contrôlé par l'IA.</p>
+                </div>
+                <div class="war-card player">
+                  <div class="war-card-title">👤 Guerre contre un JOUEUR</div>
+                  <div class="war-card-timer">25 min</div>
+                  <p class="war-card-desc">Délai obligatoire avant le début des combats contre un pays contrôlé par un joueur.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- RÈGLES GÉNÉRALES -->
+            <div class="rule-mini-card" style="background:rgba(255,31,61,0.04);border-color:rgba(255,31,61,0.18);">
+              <div class="rule-mini-title" style="color:var(--red-2);">🚫 Règles Générales — Interdictions</div>
+              <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:8px;margin-top:8px;">
+                <ul class="rule-mini-list">
+                  <li><span class="rule-bullet red"></span>Vol & Grief</li>
+                  <li><span class="rule-bullet red"></span>Destruction abusive</li>
+                  <li><span class="rule-bullet red"></span>Cheat & Exploit de bug</li>
+                  <li><span class="rule-bullet red"></span>Duplication</li>
+                </ul>
+                <ul class="rule-mini-list">
+                  <li><span class="rule-bullet red"></span>Anti-jeu</li>
+                  <li><span class="rule-bullet red"></span>Troll abusif</li>
+                  <li><span class="rule-bullet red"></span>Tentative de nuisance</li>
+                  <li><span class="rule-bullet red"></span>Collusion avec l'ennemi</li>
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- AVERTISSEMENT SALON JOURNAL -->
+        <div class="warning-banner">
+          <div class="warning-banner-icon">⚠️</div>
+          <div class="warning-banner-text">
+            <strong>Le salon #journal est classé 18+</strong> en raison de son contenu roleplay géopolitique et historique. Certaines publications peuvent contenir des conflits fictifs, des propagandes roleplay, des références historiques ou des idéologies utilisées uniquement dans le cadre du jeu. Tout le contenu présent concerne exclusivement l'univers fictif de KING NATION et ne représente pas les opinions réelles des joueurs, du staff ou d'ATLAS INTERACTIVE™. Toute apologie réelle de haine ou extrémisme en dehors du cadre roleplay reste strictement <strong>interdite</strong>.
+          </div>
+        </div>
+
+        <!-- ADMINISTRATION -->
+        <div class="rule-block">
+          <div class="rule-block-header">
+            <span style="font-size:22px">🛡️</span>
+            <span class="rule-block-title">Pouvoirs de l'Administration</span>
+          </div>
+          <div class="rule-block-body">
+            <ul class="rule-list">
+              <li><span class="rule-bullet blue"></span>Sanctionner un joueur selon la gravité des faits commis.</li>
+              <li><span class="rule-bullet blue"></span>Supprimer une action abusive et annuler ses effets en jeu.</li>
+              <li><span class="rule-bullet blue"></span>Intervenir en cas de conflit entre joueurs ou nations.</li>
+              <li><span class="rule-bullet blue"></span>Modifier les règles à tout moment pour l'équilibre du serveur.</li>
+            </ul>
+            <p style="margin-top:18px;font-size:13px;color:var(--text-mute);font-style:italic;">En jouant sur KING NATION, vous acceptez automatiquement ce règlement. 👑</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- ═══════════════════════════════════════ -->
+    <!--  TAB 3 — INFORMATIONS                  -->
+    <!-- ═══════════════════════════════════════ -->
+    <div class="tab-content" id="tab-information">
+      <div class="channel-bar">
+        <span class="channel-icon">🔵</span>
+        <span class="channel-name">information</span>
+        <span class="channel-sep">—</span>
+        <span class="channel-topic">Présentation officielle du projet KingNation</span>
+      </div>
+
+      <div class="section-header">
+        <div class="section-icon-wrapper blue">🌐</div>
+        <div>
+          <h2 class="section-title">À propos de KingNation</h2>
+          <p class="section-desc">Présentation officielle du serveur Minecraft géopolitique développé par ATLAS INTERACTIVE™</p>
+        </div>
+      </div>
+
+      <!-- INFO CARDS GRID -->
+      <div class="info-hero">
+
+        <div class="info-card featured">
+          <div class="info-card-icon">🌍</div>
+          <h3 class="info-card-title">Qu'est-ce que KingNation ?</h3>
+          <p class="info-card-desc">
+            KING NATION est un serveur géopolitique et stratégique multijoueur développé par ATLAS INTERACTIVE™. Le serveur repose sur la gestion de pays, la diplomatie, l'économie, les guerres, les alliances, le commerce entre joueurs, et l'évolution politique et militaire des nations. Chaque action importante doit être écrite dans le salon journal afin de créer une véritable <strong>histoire mondiale</strong> entre les nations.
+          </p>
+          <div class="feature-pills">
+            <span class="pill">🗺️ Géopolitique</span>
+            <span class="pill">⚔️ Guerres Organisées</span>
+            <span class="pill gold">💰 Économie</span>
+            <span class="pill gold">🤝 Diplomatie</span>
+            <span class="pill red">🏴 Alliances</span>
+            <span class="pill green">📜 Journal Historique</span>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-icon">👤</div>
+          <h3 class="info-card-title">Ce que peut faire chaque joueur</h3>
+          <p class="info-card-desc">Chaque joueur peut créer son propre pays, rejoindre un pays existant, ou jouer avec d'autres joueurs dans une même nation. Chaque pays possède cependant un seul dirigeant principal qui prend les décisions importantes.</p>
+          <div class="feature-pills" style="margin-top:20px;">
+            <span class="pill green">🏗️ Créer son pays</span>
+            <span class="pill green">🤝 Rejoindre une nation</span>
+            <span class="pill">👑 Devenir Président</span>
+          </div>
+        </div>
+
+        <div class="info-card">
+          <div class="info-card-icon">⚡</div>
+          <h3 class="info-card-title">Fonctionnalités Principales</h3>
+          <ul class="rule-list" style="margin-top:8px;">
+            <li><span class="rule-bullet blue"></span>Système économique avancé</li>
+            <li><span class="rule-bullet blue"></span>Shop entre joueurs</li>
+            <li><span class="rule-bullet blue"></span>Frontières réalistes</li>
+            <li><span class="rule-bullet blue"></span>Guerres organisées avec délais</li>
+            <li><span class="rule-bullet blue"></span>Pays avec difficultés différentes</li>
+            <li><span class="rule-bullet blue"></span>Diplomatie et alliances</li>
+            <li><span class="rule-bullet blue"></span>Évènements mondiaux</li>
+            <li><span class="rule-bullet blue"></span>Développement constant</li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- RÈGLES IMPORTANTES -->
+      <div class="rule-mini-card" style="margin-bottom:24px;">
+        <div class="rule-mini-title">📌 Informations Importantes</div>
+        <ul class="rule-mini-list">
+          <li><span class="rule-bullet"></span>Respectez le règlement du serveur et du Discord.</li>
+          <li><span class="rule-bullet"></span>Utilisez les salons correctement selon leur thème et leur objectif.</li>
+          <li><span class="rule-bullet"></span>Les décisions du staff doivent toujours être respectées.</li>
+          <li><span class="rule-bullet"></span>Les annonces officielles seront publiées sur ce Discord.</li>
+        </ul>
+      </div>
+
+      <!-- STATUT WHITELIST -->
+      <div class="info-notice">
+        <div class="info-notice-dot"></div>
+        <div class="info-notice-text">
+          <strong>Le serveur est actuellement sous whitelist.</strong> 📢 Pour rejoindre KING NATION, demander votre whitelist ou poser des questions, rendez-vous dans le salon <strong>❗・DEMANDE・❗</strong> sur le Discord officiel.
+        </div>
+      </div>
+
+      <!-- CTA FINAL -->
+      <div class="whitelist-cta">
+        <h3>Prêt à rejoindre KingNation ?</h3>
+        <p>Téléchargez le launcher officiel, rejoignez notre Discord pour obtenir votre whitelist et commencez à bâtir votre empire dès aujourd'hui.</p>
+        <div class="cta-buttons">
+          <a href="https://github.com/ATLASINTER/kingnation-launcher/releases/latest/download/kingnation_installer.exe" class="btn-cta-primary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19.35 10.04C18.67 6.59 15.64 4 12 4 9.11 4 6.6 5.64 5.35 8.04 2.34 8.36 0 10.91 0 14c0 3.31 2.69 6 6 6h13c2.76 0 5-2.24 5-5 0-2.64-2.05-4.78-4.65-4.96zM17 13l-5 5-5-5h3V9h4v4h3z"/></svg>
+            Télécharger le Launcher
+          </a>
+          <a href="https://discord.gg/aPf2v9MduU" target="_blank" rel="noopener noreferrer" class="btn-cta-secondary">
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.32 4.37A19.8 19.8 0 0 0 15.36 2.8a13.6 13.6 0 0 0-.64 1.32 18.4 18.4 0 0 0-5.44 0 13.6 13.6 0 0 0-.64-1.32 19.7 19.7 0 0 0-4.96 1.57C.54 9.02-.32 13.56.1 18.04a19.9 19.9 0 0 0 6.08 3.08c.48-.66.92-1.36 1.3-2.1-.72-.27-1.4-.6-2.04-.98.17-.12.34-.25.5-.38a14.2 14.2 0 0 0 12.12 0c.16.13.33.26.5.38-.64.38-1.32.71-2.04.98.38.74.82 1.44 1.3 2.1a19.9 19.9 0 0 0 6.08-3.08c.5-5.2-.86-9.7-3.58-13.67ZM8.02 15.3c-1.18 0-2.14-1.08-2.14-2.4s.94-2.4 2.14-2.4c1.2 0 2.16 1.08 2.14 2.4 0 1.32-.94 2.4-2.14 2.4Zm7.96 0c-1.18 0-2.14-1.08-2.14-2.4s.94-2.4 2.14-2.4c1.2 0 2.16 1.08 2.14 2.4 0 1.32-.94 2.4-2.14 2.4Z"/></svg>
+            Rejoindre le Discord
+          </a>
+        </div>
+        <p style="margin-top:24px;font-size:12px;color:var(--text-mute);margin-bottom:0;">Projet développé par <span class="atlas-brand">ATLAS INTERACTIVE™</span></p>
+      </div>
+
+    </div>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer>
+    <p>© 2026 KingNation — ATLAS INTERACTIVE™. Tous droits réservés. Ce site n'est pas affilié à Mojang Studios.</p>
+    <div class="footer-links">
+      <a href="https://atlasinter.github.io" target="_blank" rel="noopener noreferrer">Site Principal</a>
+      <a href="https://discord.gg/aPf2v9MduU" target="_blank" rel="noopener noreferrer">Discord</a>
+      <a href="https://github.com/ATLASINTER" target="_blank" rel="noopener noreferrer">GitHub</a>
+    </div>
+  </footer>
+
+  <script>
+    // ── TAB SYSTEM ──
+    const tabBtns = document.querySelectorAll('.tab-btn');
+    const tabContents = document.querySelectorAll('.tab-content');
+
+    tabBtns.forEach(btn => {
+      btn.addEventListener('click', () => {
+        const target = btn.dataset.tab;
+
+        tabBtns.forEach(b => {
+          b.classList.remove('active');
+          b.setAttribute('aria-selected', 'false');
+        });
+        tabContents.forEach(c => c.classList.remove('active'));
+
+        btn.classList.add('active');
+        btn.setAttribute('aria-selected', 'true');
+        const content = document.getElementById('tab-' + target);
+        if (content) content.classList.add('active');
+      });
+    });
+
+    // ── AUDIO SFX ──
+    const AudioSFX = {
+      ctx: null,
+      init() {
+        if (!this.ctx) this.ctx = new (window.AudioContext || window.webkitAudioContext)();
+        if (this.ctx.state === 'suspended') this.ctx.resume();
+      },
+      playHover() {
+        try {
+          this.init();
+          const ctx = this.ctx, now = ctx.currentTime;
+          const osc = ctx.createOscillator(), gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(700, now);
+          osc.frequency.exponentialRampToValueAtTime(1000, now + 0.03);
+          gain.gain.setValueAtTime(0.035, now);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.035);
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.start(now); osc.stop(now + 0.04);
+        } catch(e) {}
+      },
+      playClick() {
+        try {
+          this.init();
+          const ctx = this.ctx, now = ctx.currentTime;
+          const osc = ctx.createOscillator(), gain = ctx.createGain();
+          osc.type = 'sine';
+          osc.frequency.setValueAtTime(400, now);
+          osc.frequency.exponentialRampToValueAtTime(200, now + 0.04);
+          gain.gain.setValueAtTime(0.12, now);
+          gain.gain.exponentialRampToValueAtTime(0.0001, now + 0.05);
+          osc.connect(gain); gain.connect(ctx.destination);
+          osc.start(now); osc.stop(now + 0.055);
+        } catch(e) {}
+      },
+      playTab() {
+        try {
+          this.init();
+          const ctx = this.ctx, now = ctx.currentTime;
+          const freqs = [523.25, 659.25, 783.99];
+          freqs.forEach((freq, i) => {
+            const osc = ctx.createOscillator(), gain = ctx.createGain();
+            osc.type = 'sine';
+            osc.frequency.setValueAtTime(freq, now + i * 0.05);
+            gain.gain.setValueAtTime(0, now);
+            gain.gain.linearRampToValueAtTime(0.07, now + i * 0.05 + 0.01);
+            gain.gain.exponentialRampToValueAtTime(0.0001, now + i * 0.05 + 0.2);
+            osc.connect(gain); gain.connect(ctx.destination);
+            osc.start(now + i * 0.05); osc.stop(now + i * 0.05 + 0.25);
+          });
+        } catch(e) {}
+      }
+    };
+
+    // Bind tab SFX
+    tabBtns.forEach(btn => {
+      btn.addEventListener('mouseenter', () => AudioSFX.playHover());
+      btn.addEventListener('click', () => AudioSFX.playTab());
+    });
+
+    // Bind hover SFX to interactive elements
+    document.querySelectorAll('.cmd-item, .rule-mini-card, .info-card, .btn-cta-primary, .btn-cta-secondary, .btn-discord-header, .btn-launcher-header').forEach(el => {
+      el.addEventListener('mouseenter', () => AudioSFX.playHover());
+    });
+    document.querySelectorAll('.btn-cta-primary, .btn-cta-secondary, .btn-discord-header, .btn-launcher-header').forEach(el => {
+      el.addEventListener('click', () => AudioSFX.playClick());
+    });
+
+    // ── SCROLL REVEAL ──
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.style.opacity = '1';
+          entry.target.style.transform = 'translateY(0)';
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.08, rootMargin: '0px 0px -40px 0px' });
+
+    document.querySelectorAll('.cmd-group, .rule-block, .info-card, .rule-mini-card, .war-card').forEach((el, i) => {
+      el.style.opacity = '0';
+      el.style.transform = 'translateY(20px)';
+      el.style.transition = `opacity 0.5s ease ${i * 0.05}s, transform 0.5s ease ${i * 0.05}s`;
+      observer.observe(el);
+    });
+
+    // ── FLOATING PARTICLES ──
+    (function initParticles() {
+      const container = document.createElement('div');
+      Object.assign(container.style, {
+        position: 'fixed', inset: '0', pointerEvents: 'none', zIndex: '0', overflow: 'hidden'
+      });
+      document.body.appendChild(container);
+
+      for (let i = 0; i < 18; i++) {
+        const p = document.createElement('div');
+        const size = Math.random() * 3 + 1.5;
+        const isGold = Math.random() > 0.75;
+        Object.assign(p.style, {
+          position: 'absolute', width: size + 'px', height: size + 'px',
+          borderRadius: '50%', bottom: '-10px', left: Math.random() * 100 + '%',
+          background: isGold ? '#ffd200' : '#ff1f3d',
+          boxShadow: `0 0 8px ${isGold ? '#ffd200' : '#ff1f3d'}`,
+          opacity: '0', animation: `floatUp ${12 + Math.random() * 14}s linear ${Math.random() * -20}s infinite`
+        });
+        container.appendChild(p);
+      }
+
+      const style = document.createElement('style');
+      style.textContent = `
+        @keyframes floatUp {
+          0% { transform: translate(0, 0); opacity: 0; }
+          10% { opacity: 0.12; }
+          90% { opacity: 0.08; }
+          100% { transform: translate(${Math.random() > 0.5 ? '' : '-'}${Math.floor(Math.random() * 40 + 10)}px, -105vh); opacity: 0; }
+        }
+      `;
+      document.head.appendChild(style);
+    })();
+  </script>
+</body>
+</html>
