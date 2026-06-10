@@ -1308,7 +1308,8 @@
           const bannerMsg = document.getElementById('site-banner-msg');
           if (banner && bannerMsg) {
             bannerMsg.textContent = config.global.announcementMessage;
-            banner.className = 'site-banner ' + (config.global.announcementType || 'info');
+            const safeType = (config.global.announcementType === 'warn' ? 'warning' : config.global.announcementType) || 'info';
+            banner.className = 'site-banner ' + safeType;
           }
         }
 
