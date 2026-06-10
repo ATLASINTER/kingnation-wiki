@@ -1347,6 +1347,13 @@
           if (tabContent) tabContent.style.display = 'none';
         }
 
+        // 4. LIENS DISCORD DYNAMIQUES
+        if (config.global?.discordUrl) {
+          document.querySelectorAll('a[href*="discord"]').forEach(link => {
+            link.href = config.global.discordUrl;
+          });
+        }
+
       } catch (e) {
         console.warn('[KingNation Wiki] fetchWebConfig failed:', e);
       }
